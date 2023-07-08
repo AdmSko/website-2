@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wedkarstwo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="projekt.xsd">
+	<definition>Wędkarstwo, jest to rodzaj zajęcia rekreacyjnego, hobby oraz jednocześnie jest jednym z najstarszych sportów, polega na łowieniu ryb na wędkę.</definition>
+	
+	<history>
+		<period point="First">
+			<name>Początki</name>
+			<txt>
+				Wędkarstwo jako rozrywka, początkowo tylko najbogatszej części społeczeństwa, znane była od tysiącleci. Rzymski poeta Publiusz Owidiusz Naso w poemacie Halieutica (Sztuka rybołówstwa) opisał wędkarskie sposoby łowienia ryb różnych gatunków. W I wieku n.e. o wędkowaniu wspomina też w swoim epigramie Marcus Valerius Martialis, a Claudius Aelianus w swoim dziele De Animalium Natura również zawarł obszerne opisy metod wędkowania.
+			</txt>
+		</period> 
+		
+		<period point="Second">
+			<name>Dawna Polska</name>
+			<txt>
+				Najpełniej ten rodzaj rekreacji na ziemiach polskich rozwinął się w zaborze austriackim, gdzie stosunki prawne w wielonarodowej monarchii były najbardziej liberalne. Ludność miejscowa łowiła ryby, ale traktowała to zajęcie wyłącznie utylitarnie, gdyż ryby stanowiły poważne uzupełnienie na ogół jarskiego jadłospisu uboższych mieszkańców. Sport wędkowy, jak ówcześni mówili, wzorowany był na tradycjach zachodnich spopularyzowanych przez ówczesne elity, z których do najbardziej znanych należeli hr. Alfred i Artur Potoccy.
+			</txt>
+		</period >
+		
+		<period point="Third">
+			<name>XIX-wieczna Polska</name>
+			<txt>
+				Po wprowadzeniu na terenie Galicji i Lodomerii przepisów ustawy rybackiej indywidualne uprawianie wędkarstwa stało się utrudnione, głównie z powodu ustanowienia rewirów rybackich, dzierżawionych przez rozmaitych użytkowników. 13 lipca 1879 roku zostało powołane Krajowe Towarzystwo Rybackie, którego pierwszym prezesem został dr M. Nowicki, sprawujący funkcję do 30 października 1890 roku. Zaistniała więc naturalna potrzeba większej integracji uprawiających „wędkowanie rozrywkowe” i wspólna dzierżawa rewirów rybackich.
+			</txt>
+		</period>
+		
+		<period point="Fourth">
+			<name>Po I Wojnie Światowej</name>
+			<txt>
+				I wojna światowa wywarła nader ujemny wpływ na stosunki gospodarcze w regionie przemyskim. Szczególnie ucierpiało rybołówstwo tak rzeczne, jak i stawowe. Zanik moralności i poczucia cudzej własności spowodował, że rybostan katastrofalnie się zmniejszył, gdyż łowił każdy, kto tylko chciał, bez żadnych kart lub zezwoleń, posługując się nawet dynamitem i granatami. Łowiono, nie bacząc ani na okresy ochronne tarła ani na zapisane w ustawie wymiary. Ponadto nieuczciwi handlarze, równocześnie dzierżawcy rewirów rybackich utworzywszy spółkę handlową, dyktowali ceny, jakie sami chcieli, osiągając minimalny zysk 200%.
+			</txt>
+		</period>
+		
+		<period point="Fifth">
+			<name>Podczas okupacji</name>
+			<txt>
+				W latach okupacji 1939–1945 władze niemieckie nie rozwiązały organizacji rybackich i wędkarskich, uznając je za organizacje gospodarcze wyższej użyteczności. Naczelną organizacją był Związek Organizacji Rybackich. Drugi stopień tworzyły Okręgowe Towarzystwa Rybackie zorganizowane na wzór KTR-u. Wszystkie towarzystwa wędkarskie musiały być ich członkami. W r. 1941 siedzibą ZOR stał się Kraków. W czasie wojny na terenie Generalnej Guberni działało 38 towarzystw wędkarskich, w których zrzeszonych było 3033 członków.
+			</txt>
+		</period>
+	</history>
+	
+	<fish> 
+		<splitmethod nr="I">
+			<typefish id="1">
+				<typename>Ryby tłuste</typename>
+					<treename num="uno">
+						<name>Łosoś</name>
+							<additionalname lang ="latin">
+								<scientificname kindfish="fosh" obligatory="no">
+									<sc>Salmo salar</sc>
+								</scientificname>
+							</additionalname>
+					</treename>
+				<avrsize>120</avrsize>
+				<size>duzy</size>
+				<both>duzy</both>
+				<protection>1 października - 31 grudnia</protection>
+				<photo source="ryba3.png"/>
+			</typefish>
+			
+			<typefish id="2">
+				<typename>Ryby średnio-tłuste</typename>
+				<treename num="dos">
+						<name>Pstrąg</name>
+							<additionalname lang ="latin">
+								<scientificname kindfish="elfisho" obligatory="no">
+									<sc>Oncorhynchus mykiss</sc>
+								</scientificname>
+							</additionalname>
+				</treename>
+				<avrsize>40</avrsize>
+				<size>sredni</size>
+				<both>40</both>
+				<protection>1 września - 31 stycznia</protection>
+				<photo source="ryba4.png"/>
+			</typefish>
+			
+			<typefish id="3">
+				<typename>Ryby chude</typename>
+				<treename num="tres">
+						<name>Flądra</name>
+							<additionalname lang ="latin">
+								<scientificname kindfish="fishner" obligatory="no">	
+									<sc>Platichthys flesus</sc>
+								</scientificname>
+							</additionalname>
+				</treename>
+				<avrsize>34</avrsize>
+				<size>maly</size>
+				<both>maly</both>
+				<protection>1 lutego - 31 maja</protection>
+				<photo source="ryba5.png"/>
+			</typefish>
+		</splitmethod>
+		
+		<splitmethod nr="II">
+			<typefish id="1">
+				<typename>Ryby morskie</typename>
+				<treename num="uno">
+						<name>Śledź</name>
+							<additionalname lang ="latin">
+								<scientificname kindfish="elfisho" obligatory="no">
+									<sc>Clupea harengus</sc></scientificname>
+							</additionalname>
+				</treename>
+				<avrsize>22</avrsize>
+				<size>maly</size>
+				<both>maly</both>
+				<protection>4 czerwca - 31 sierpnia</protection>
+				<photo source="ryba1.png"/>
+			</typefish>
+			
+			<typefish id="2">
+				<typename>Ryby słodkowodne</typename>
+				<treename num="dos">
+						<name>Karp</name>
+						<additionalname lang ="latin">
+							<scientificname kindfish="fosh" obligatory="no">
+								<sc>Cyprinus carpio</sc>
+							</scientificname>
+						</additionalname>
+				</treename>
+				<avrsize>60</avrsize>
+				<size>sredni</size>
+				<both>60</both>
+				<protection>Brak</protection>
+				<photo source="ryba2.jpg"/>
+			</typefish>
+		</splitmethod>
+	</fish>
+
+	<famous>
+		<person nmbr="1st">
+			<name>Rick</name>
+			<surname>Clunn</surname>
+			<country>USA</country>
+				<moreinfo nmbr="1st">
+					<photo source="rick.jpg"></photo>
+					<link source="https://en.wikipedia.org/wiki/Rick_Clunn"></link>
+				</moreinfo>
+		</person>
+		
+		<person nmbr="2nd">
+			<name>Michael</name>
+			<surname>Laconelli</surname>
+			<country>USA</country>
+			<moreinfo nmbr="2nd">
+					<photo source="michael.jpg"></photo>
+					<link source="https://en.wikipedia.org/wiki/Michael_Iaconelli"></link>
+			</moreinfo>
+		</person>
+	</famous>
+	
+	<sources>
+		<site id="1">
+			<name>Wikipedia.org</name>
+			<link source="https://www.wikipedia.org"></link>
+		</site>
+
+		<site id="2" >
+			<name>Rybobranie.pl</name>
+			<link source="http://www.rybobranie.pl"> </link>
+		</site>
+		
+		<site id="3">
+			<name>Wedkuje.pl</name>
+			<link source="https://wedkuje.pl"></link>
+		</site>
+	</sources>
+</wedkarstwo>

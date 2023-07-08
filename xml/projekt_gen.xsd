@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="wedkarstwo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="definition" type="xs:string" />
+				<xs:element name="history">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="period">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="name" type="xs:string" />
+										<xs:element name="txt" type="xs:string" />
+									</xs:sequence>
+									<xs:attribute name="point" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="fish">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="splitmethod">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="unbounded" name="typefish">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="typename" type="xs:string" />
+													<xs:element name="treename">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="name" type="xs:string" />
+																<xs:element name="additionalname">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="scientificname">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="sc" type="xs:string" />
+																					</xs:sequence>
+																					<xs:attribute name="kindfish" type="xs:string" use="required" />
+																					<xs:attribute name="obligatory" type="xs:string" use="required" />
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																		<xs:attribute name="lang" type="xs:string" use="required" />
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="num" type="xs:string" use="required" />
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="avrsize" type="xs:unsignedByte" />
+													<xs:element name="size" type="xs:string" />
+													<xs:element name="both" type="xs:string" />
+													<xs:element name="protection" type="xs:string" />
+													<xs:element name="photo">
+														<xs:complexType>
+															<xs:attribute name="source" type="xs:string" use="required" />
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:unsignedByte" use="required" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="nr" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="famous">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="person">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="name" type="xs:string" />
+										<xs:element name="surname" type="xs:string" />
+										<xs:element name="country" type="xs:string" />
+										<xs:element name="moreinfo">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="photo">
+														<xs:complexType>
+															<xs:attribute name="source" type="xs:string" use="required" />
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="link">
+														<xs:complexType>
+															<xs:attribute name="source" type="xs:string" use="required" />
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="nmbr" type="xs:string" use="required" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="nmbr" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="sources">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="site">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="name" type="xs:string" />
+										<xs:element name="link">
+											<xs:complexType mixed="true">
+												<xs:attribute name="source" type="xs:string" use="required" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="id" type="xs:unsignedByte" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

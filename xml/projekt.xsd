@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+
+	<xs:element name="wedkarstwo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="definition" type="definitionType"/>
+				<xs:element name="history" type="historyType"/>
+				<xs:element name="fish" type="fishType"/>
+				<xs:element name="famous" type="famousType"/>
+				<xs:element name="sources" type="sourcesType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+				<xs:complexType name="historyType">
+					<xs:sequence>
+						<xs:element name="period" type="periodType" minOccurs="0" maxOccurs="unbounded" />
+					</xs:sequence>
+						
+				</xs:complexType>
+				
+		
+				<xs:complexType name="fishType">
+					<xs:sequence>
+						<xs:element name="splitmethod" type="splitmethodType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+					
+	
+				<xs:complexType name="famousType">
+					<xs:sequence>
+						<xs:element name="person" type="moreinfoType" minOccurs="0" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:complexType>
+				
+				
+				<xs:complexType name="sourcesType">
+					<xs:sequence>
+					 <xs:element name="site" type="siteType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+				
+		
+				
+		
+	
+	
+
+
+
+	
+				<xs:simpleType name ="definitionType">
+					<xs:restriction base="longStringType">
+						<xs:minLength value="15"/>
+					</xs:restriction>
+				</xs:simpleType>
+	
+	
+				<xs:complexType name="periodType">
+					<xs:sequence>
+						<xs:element name="name" type="shortStringType" minOccurs="0" maxOccurs="unbounded" />
+						<xs:element name="txt" type="longStringType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute type="shortStringType" name="point"/>
+				</xs:complexType>
+				
+							
+				
+					
+				<xs:complexType name="splitmethodType">
+					<xs:sequence>
+						<xs:element name="typefish" type="typefishType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute type="shortStringType" name="nr" use="required"/>
+				</xs:complexType>
+
+
+				<xs:complexType name="typefishType">
+					<xs:sequence>
+						<xs:element name="typename" type="typenameType" minOccurs="1" maxOccurs="unbounded"/>
+						<xs:element name="treename" type="treenameType" minOccurs="1" maxOccurs="unbounded"/>             
+						<xs:element name="avrsize" type="avrsizeType" minOccurs="1" maxOccurs="unbounded"/> 
+						<xs:element name="size" type="sizeType" minOccurs="1" maxOccurs="unbounded"/>
+						<xs:element name="both" type="bothType" minOccurs="1" maxOccurs="unbounded"/>
+						<xs:element name="protection" type="longStringType" minOccurs="1" maxOccurs="unbounded"/> 
+						<xs:element name="photo" type="adressType" minOccurs="1" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute ref="id"/>
+				</xs:complexType>
+
+			
+		
+				<xs:simpleType name="bothType">
+						<xs:union memberTypes="avrsizeType sizeType"/>
+				</xs:simpleType>
+
+				<xs:simpleType name="sizeType">
+					<xs:restriction base="shortStringType">
+						<xs:enumeration value="maly"/>
+						<xs:enumeration value="sredni"/>
+						<xs:enumeration value="duzy"/>
+					</xs:restriction>
+				</xs:simpleType>
+	
+				<xs:simpleType name="avrsizeType">
+					<xs:restriction base="xs:positiveInteger">
+					<xs:minInclusive value="1" />
+					<xs:maxInclusive value="200" />
+					</xs:restriction>
+				</xs:simpleType>
+	
+					
+						
+				<xs:complexType name="treenameType">
+					<xs:sequence>
+						<xs:element name="name" type="shortStringType" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="additionalname" type="additionalnameType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute name ="num" type="shortStringType" use="optional"/>
+				</xs:complexType>
+
+				<xs:complexType name="additionalnameType">
+					<xs:complexContent>
+						<xs:extension base="treenameType">
+							<xs:sequence>
+								<xs:element name="scientificname" type="scientificnameType" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+							<xs:attribute name="lang" type="shortStringType" use="required"/>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+
+
+				<xs:complexType name="scientificnameType">
+					<xs:sequence>
+					<xs:element name="sc" type="shortStringType"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="fishatrybute"/>
+				</xs:complexType>
+	
+				<xs:attributeGroup name="fishatrybute">
+					<xs:attribute name="kindfish" type="kindType"/>
+					<xs:attribute name="obligatory" />
+				</xs:attributeGroup>
+	
+				<xs:attribute name="obligatory" default="no" >
+					<xs:simpleType>
+						<xs:restriction base="shortStringType">
+							<xs:pattern value="yes|no"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+	
+				<xs:simpleType name="kindType">
+					<xs:restriction base= "xs:string">
+						<xs:enumeration value="elfisho"/>
+						<xs:enumeration value="fosh"/>
+						<xs:enumeration value="fishner"/>
+					</xs:restriction>
+				</xs:simpleType>
+							  
+			
+	
+	
+	
+	
+				<xs:complexType name="personType">
+					<xs:sequence>
+						<xs:element name="name" type="shortStringType" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="surname" type="shortStringType" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="country" type="shortStringType" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element name="moreinfo" type="moreinfoType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute name="nmbr" type="shortStringType" use="required"/>
+				</xs:complexType>
+	
+				<xs:complexType name="moreinfoType">
+					<xs:complexContent>
+						<xs:extension base="personType">
+							<xs:sequence>
+								<xs:element name="photo" type="adressType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="link" type="adressType" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>		
+				
+				<xs:complexType name="siteType">
+						<xs:sequence>
+							<xs:element name="name" type="nameadressType" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="link" type="adressType" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					<xs:attribute ref="id"/>
+				</xs:complexType>
+				
+				<xs:complexType name="adressType">
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="source" type="xs:anyURI" use="required"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+	
+				<xs:simpleType name="nameadressType" >
+								 <xs:list itemType="xs:string"/>
+				</xs:simpleType>
+		
+				<xs:simpleType name="typenameType">
+					<xs:restriction base="shortStringType">
+						<xs:enumeration	value="Ryby tłuste"/>
+						<xs:enumeration	value="Ryby średnio-tłuste"/>
+						<xs:enumeration	value="Ryby chude"/>
+						<xs:enumeration	value="Ryby morskie"/>
+						<xs:enumeration	value="Ryby słodkowodne"/>
+					</xs:restriction>
+				</xs:simpleType>
+
+
+				<xs:attribute name="id">
+					<xs:simpleType>
+						<xs:restriction base="xs:byte"/>
+					</xs:simpleType>
+				</xs:attribute>
+
+
+
+				<xs:simpleType name="shortStringType">
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="35"/>
+					</xs:restriction>
+				</xs:simpleType>
+
+
+				<xs:simpleType name="longStringType">
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="630"/>
+					</xs:restriction>
+				</xs:simpleType>
+				
+				
+				
+				
+				
+			
+			
+		
+</xs:schema>
